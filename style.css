@@ -1,0 +1,303 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Trebuchet MS", sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffe0ec, #ffc1d5, #fff0f5);
+  color: #a41442;
+  overflow-x: hidden;
+}
+
+.screen {
+  min-height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.screen.active {
+  display: flex;
+  animation: appear 0.8s ease;
+}
+
+.card {
+  width: 100%;
+  max-width: 560px;
+  padding: 36px 24px;
+  border-radius: 30px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid #ffb2cc;
+  box-shadow: 0 12px 40px rgba(210, 30, 90, 0.18);
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  font-size: clamp(28px, 6vw, 43px);
+  color: #d81b60;
+  margin: 16px 0;
+}
+
+h2 {
+  margin: 18px 0;
+  color: #b51245;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.8;
+  margin: 14px 0;
+}
+
+.emoji {
+  font-size: 70px;
+  animation: heartbeat 1.2s infinite;
+}
+
+button {
+  background: linear-gradient(135deg, #ff4f87, #d4144b);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 26px;
+  margin-top: 22px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 16px #ed86aa;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 24px #e75480;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
+
+/* Floating hearts */
+.hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.heart {
+  position: absolute;
+  bottom: -40px;
+  animation: floatUp linear forwards;
+  opacity: 0.8;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-115vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Birthday cake */
+.cake {
+  width: 230px;
+  margin: 35px auto 15px;
+  position: relative;
+  padding-top: 38px;
+}
+
+.flame {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 34px;
+  animation: flicker 0.4s infinite alternate;
+}
+
+.flame.out {
+  display: none;
+}
+
+@keyframes flicker {
+  from { transform: translateX(-50%) scale(1); }
+  to { transform: translateX(-50%) scale(1.16) rotate(5deg); }
+}
+
+.candle {
+  width: 15px;
+  height: 47px;
+  margin: 0 auto;
+  background: repeating-linear-gradient(
+    45deg, #ff477e, #ff477e 5px, white 5px, white 10px
+  );
+  border-radius: 5px 5px 0 0;
+}
+
+.cake-top {
+  width: 220px;
+  height: 28px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #ff9bbd;
+  border: 3px solid white;
+  position: relative;
+  z-index: 1;
+}
+
+.cake-body {
+  width: 200px;
+  height: 70px;
+  margin: -12px auto 0;
+  background: linear-gradient(#ff6b9b, #e82d66);
+  border-radius: 8px 8px 18px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 25px;
+}
+
+.cake-plate {
+  width: 240px;
+  height: 15px;
+  margin: 0 auto;
+  background: #ffb4ce;
+  border-radius: 50%;
+}
+
+/* Birthday celebration */
+.birthday-card {
+  animation: appear 1s ease;
+}
+
+.birthday-title {
+  animation: heartbeat 1.5s infinite;
+}
+
+.big-heart {
+  font-size: 75px;
+  animation: heartbeat 1s infinite;
+}
+
+.love, .signature {
+  font-size: 20px;
+  font-weight: bold;
+  color: #d4144b;
+}
+
+/* Flower gift */
+.bouquet {
+  height: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 4px;
+  margin: 22px auto;
+  padding-bottom: 12px;
+  position: relative;
+}
+
+.flower {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: bottom center;
+  animation: bloom 1.4s ease-out backwards;
+}
+
+.flower-one { animation-delay: 0.2s; }
+.flower-two { animation-delay: 0.5s; }
+.flower-three { animation-delay: 0.8s; }
+.flower-four { animation-delay: 1.1s; }
+.flower-five { animation-delay: 1.4s; }
+
+.petals {
+  font-size: 43px;
+  transform-origin: bottom center;
+  animation: sway 3s ease-in-out infinite alternate;
+}
+
+.stem {
+  height: 95px;
+  width: 6px;
+  margin-top: -2px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #278c53, #74c76b);
+  position: relative;
+}
+
+.stem::after {
+  content: "🍃";
+  position: absolute;
+  font-size: 22px;
+  left: 0;
+  top: 28px;
+}
+
+@keyframes bloom {
+  from {
+    opacity: 0;
+    transform: scale(0) rotate(-20deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes sway {
+  from { transform: rotate(-7deg); }
+  to { transform: rotate(7deg); }
+}
+
+.gift-message {
+  background: #fff0f5;
+  border-radius: 20px;
+  padding: 18px;
+  margin-top: 15px;
+}
+
+/* Small screens */
+@media (max-width: 450px) {
+  .card {
+    padding: 28px 17px;
+  }
+
+  .bouquet {
+    gap: 0;
+    transform: scale(0.9);
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}

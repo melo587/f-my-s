@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Sister 🌹</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="hearts" id="hearts"></div>
+
+  <!-- Stage 1: First question -->
+  <section class="screen active" id="question">
+    <div class="card">
+      <div class="emoji">💗</div>
+      <h1>Hey, Beautiful Sister!</h1>
+      <p>I have a little surprise for you...</p>
+      <h2>Are you ready? 🎀</h2>
+      <button onclick="startSurprise()">YES! 💕</button>
+    </div>
+  </section>
+
+  <!-- Stage 2: Blow the candle -->
+  <section class="screen" id="cake">
+    <div class="card">
+      <h1>Make a Wish! 🎂</h1>
+      <p>Click the candle to blow it out!</p>
+
+      <div class="cake">
+        <div class="flame" id="flame">🔥</div>
+        <div class="candle" id="candle"></div>
+        <div class="cake-top"></div>
+        <div class="cake-body">
+          <span>💗</span> <span>💕</span> <span>💗</span>
+        </div>
+        <div class="cake-plate"></div>
+      </div>
+
+      <button id="blowButton" onclick="blowCandle()">
+        Blow the Candle! 💨
+      </button>
+    </div>
+  </section>
+
+  <!-- Stage 3: Birthday message -->
+  <section class="screen" id="birthday">
+    <div class="card birthday-card">
+      <div class="big-heart">💖</div>
+      <h1 class="birthday-title">Happy Birthday!</h1>
+      <h2>To the Best Sister Ever 🌷</h2>
+      <p>
+        You make life more beautiful just by being in it.
+        May your days be filled with love, laughter,
+        happiness, and all your sweetest dreams.
+      </p>
+      <p class="love">I love you so much, sis! 💋</p>
+      <button onclick="showFlowers()">Open Your Gift 🎁</button>
+    </div>
+  </section>
+
+  <!-- Stage 4: Animated flower gift -->
+  <section class="screen" id="gift">
+    <div class="card flower-card">
+      <h1>Your Gift, My Love 🌸</h1>
+      <p>A little bouquet for my favorite sister!</p>
+
+      <div class="bouquet">
+        <div class="flower flower-one">
+          <div class="petals">🌸</div>
+          <div class="stem"></div>
+        </div>
+        <div class="flower flower-two">
+          <div class="petals">🌹</div>
+          <div class="stem"></div>
+        </div>
+        <div class="flower flower-three">
+          <div class="petals">🌷</div>
+          <div class="stem"></div>
+        </div>
+        <div class="flower flower-four">
+          <div class="petals">🌺</div>
+          <div class="stem"></div>
+        </div>
+        <div class="flower flower-five">
+          <div class="petals">🌸</div>
+          <div class="stem"></div>
+        </div>
+      </div>
+
+      <div class="gift-message">
+        <h2>For You, Always 💝</h2>
+        <p>
+          No gift could ever be as precious as having you
+          as my sister. Keep shining, keep smiling,
+          and never forget how special you are.
+        </p>
+        <p class="signature">Forever your loving sibling 💗</p>
+      </div>
+
+      <button onclick="restartSurprise()">Replay the Surprise ↻</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
